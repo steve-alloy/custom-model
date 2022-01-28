@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "commit": "git init && git status && git add . && git commit -m $MSG && git push"
+    "commit": "git init && git status && git add . && git commit -m $MSG && git push --set-upstream origin main"
   },
   "author": "",
   "license": "ISC",
