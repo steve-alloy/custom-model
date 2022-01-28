@@ -7,7 +7,7 @@
     "node": "16.x"
   },
   "scripts": {
-    "commit": "git init && git status && git add . && git commit -m $MSG && git push --set-upstream origin main",
+    "commit": "git init && git status && git add . && git commit -m $MSG && git push main",
     "start": "ts-node ."
   },
   "author": "",
