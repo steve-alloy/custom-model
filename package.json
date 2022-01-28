@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsc",
     "commit": "git init && git status && git add . && git commit -m $MSG && git push --set-upstream origin main",
-    "start": "ts-node ."
+    "start": "node ."
   },
   "author": "",
   "license": "ISC",
