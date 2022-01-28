@@ -2,9 +2,13 @@
   "name": "custom-model",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
-    "commit": "git init && git status && git add . && git commit -m $MSG && git push --set-upstream origin main"
+    "commit": "git init && git status && git add . && git commit -m $MSG && git push --set-upstream origin main",
+    "start": "ts-node ."
   },
   "author": "",
   "license": "ISC",
