@@ -10,7 +10,7 @@ const app: Application = express();
 app.get("/", (req: Request, res: Response) => {
     res.json({
         "modelSuccess": true,
-        "modelScore": "ABC",
+        "modelScore": 123,
         "modelVersion": 1
     })
 });
