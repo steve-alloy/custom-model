@@ -7,8 +7,12 @@ const port: string | number = process.env.PORT || 3000;
 
 const app: Application = express();
 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
 app.post("/", (req: Request, res: Response) => {
     console.log(req);
+    console.log("BODY", req.body);
     res.json({
         "modelSuccess": true,
         "modelScore": 123,
