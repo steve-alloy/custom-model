@@ -8,6 +8,7 @@ const port: string | number = process.env.PORT || 3000;
 const app: Application = express();
 
 app.get("/", (req: Request, res: Response) => {
+    console.log(req);
     res.json({
         "modelSuccess": true,
         "modelScore": 123,
