@@ -17,7 +17,7 @@ app.post("/", (req: Request, res: Response) => {
 
     // const modelScore = sentilinkScore + socureScore;
     console.log(req.body);
-    console.log("Score is", modelScore);
+    // console.log("Score is", modelScore);
     res.json({
         "modelScore": 123,
         "modelSuccess": true,
