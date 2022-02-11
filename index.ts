@@ -11,12 +11,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.post("/", (req: Request, res: Response) => {
-    console.log(req.body);
+    const attributeName = req.body["Steve G. Test Account Meta"].attributeName;
+    const sentilinkScore = parseInt(attributeName.sentilink.attributeValue);
+    const socureScore = parseInt(attributeName.socure_risk_score.attributeValue);
+
+    const modelScore = sentilinkScore + socureScore;
     res.json({
+        modelScore,
         "modelSuccess": true,
-        "modelScore": 123,
         "modelVersion": 1
-    })
+    });
 });
 
 app.listen(port, () => {
