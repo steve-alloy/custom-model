@@ -11,15 +11,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.post("/", (req: Request, res: Response) => {
-    const attributeName = req.body["Steve G. Test Account Meta"].attributeName;
-    const sentilinkScore = parseInt(attributeName.sentilink.attributeValue);
-    const socureScore = parseInt(attributeName.socure_risk_score.attributeValue);
+    // const attributeName = req.body["Steve G. Test Account Meta"].attributeName;
+    // const sentilinkScore = parseInt(attributeName.sentilink.attributeValue);
+    // const socureScore = parseInt(attributeName.socure_risk_score.attributeValue);
 
-    const modelScore = sentilinkScore + socureScore;
+    // const modelScore = sentilinkScore + socureScore;
     console.log(req.body);
     console.log("Score is", modelScore);
     res.json({
-        modelScore,
+        "modelScore": 123,
         "modelSuccess": true,
         "modelVersion": 1
     });
