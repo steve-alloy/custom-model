@@ -16,6 +16,7 @@ app.post("/", (req: Request, res: Response) => {
     const socureScore = parseInt(attributeName.socure_risk_score.attributeValue);
 
     const modelScore = sentilinkScore + socureScore;
+    console.log("Score is", modelScore);
     res.json({
         modelScore,
         "modelSuccess": true,
