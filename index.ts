@@ -1,7 +1,10 @@
 import express, { Application, Request, Response} from "express";
 import dotenv from "dotenv";
+import { Scores } from "./types/index";
 
 dotenv.config();
+
+const CURRENT_VERSION = 2;
 
 const port: string | number = process.env.PORT || 3000;
 
@@ -11,17 +14,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.post("/", (req: Request, res: Response) => {
-    // const attributeName = req.body["Steve G. Test Account Meta"].attributeName;
-    // const sentilinkScore = parseInt(attributeName.sentilink.attributeValue);
-    // const socureScore = parseInt(attributeName.socure_risk_score.attributeValue);
+    const attributeName = req.body["Steve G. Test Account Meta"].attributeName;
+    const sentilinkScore: number = parseInt(attributeName.find((obj: Scores) => obj.attributeName === "sentilink").attributeValue);
+    const socureScore: number = parseInt(attributeName.find((obj: Scores) => obj.attributeName === "socure_risk_score").attributeValue);
 
-    // const modelScore = sentilinkScore + socureScore;
+    const modelScore: number = sentilinkScore + socureScore;
     console.log(req.body);
-    // console.log("Score is", modelScore);
+
     res.json({
-        "modelScore": 123,
-        "modelSuccess": true,
-        "modelVersion": 1
+        modelScore,
+        "modelSuccess": !!modelScore,
+        "modelVersion": CURRENT_VERSION
     });
 });
 
