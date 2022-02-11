@@ -19,7 +19,7 @@ app.post("/", (req: Request, res: Response) => {
     const socureScore: number = parseInt(attributes.find((obj: Scores) => obj.attributeName === "socure_risk_score").attributeValue);
 
     const modelScore: number = sentilinkScore + socureScore;
-    console.log(req.body);
+    console.log(`Model score is: ${modelScore}!`);
 
     res.json({
         modelScore,
