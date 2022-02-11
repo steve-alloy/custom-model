@@ -14,9 +14,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.post("/", (req: Request, res: Response) => {
-    const attributeName = req.body["Steve G. Test Account Meta"].attributeName;
-    const sentilinkScore: number = parseInt(attributeName.find((obj: Scores) => obj.attributeName === "sentilink").attributeValue);
-    const socureScore: number = parseInt(attributeName.find((obj: Scores) => obj.attributeName === "socure_risk_score").attributeValue);
+    const attributes = req.body["Steve G. Test Account Meta"];
+    const sentilinkScore: number = parseInt(attributes.find((obj: Scores) => obj.attributeName === "sentilink").attributeValue);
+    const socureScore: number = parseInt(attributes.find((obj: Scores) => obj.attributeName === "socure_risk_score").attributeValue);
 
     const modelScore: number = sentilinkScore + socureScore;
     console.log(req.body);
